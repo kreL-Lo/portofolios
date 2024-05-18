@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    width: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .rightContainer {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.leftContainer {
+    border-radius: 6px;
+    width: 150px;
+    height: 150px;
+    /* a simple border effect */
+    /* box-shadow: 0 0 0 0.5px #142850; */
+    background: radial-gradient(
+                circle at 100% 100%,
+                #ffffff 0,
+                #ffffff 3px,
+                transparent 3px
+            )
+            0% 0%/8px 8px no-repeat,
+        radial-gradient(
+                circle at 0 100%,
+                #ffffff 0,
+                #ffffff 3px,
+                transparent 3px
+            )
+            100% 0%/8px 8px no-repeat,
+        radial-gradient(
+                circle at 100% 0,
+                #ffffff 0,
+                #ffffff 3px,
+                transparent 3px
+            )
+            0% 100%/8px 8px no-repeat,
+        radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px)
+            100% 100%/8px 8px no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 10px)
+            calc(100% - 16px) no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 16px)
+            calc(100% - 10px) no-repeat,
+        linear-gradient(146deg, #edf7fa 0%, #142850 100%);
+    border-radius: 8px;
+    padding: 9px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 0.5px;
+}
+
+.rightContainer {
+    margin-left: 1rem;
+    width: 70%;
+}
+
+.rightContainer h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.yearType {
+    display: flex;
+    gap: 10px;
+}
+
+.year {
+    color: white;
+    background-color: #142850;
+    padding: 1px 8px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+
+.type {
+    color: #8695a4;
+}
+.ongoing {
+    color: white;
+    background-color: #0b6623;
+    padding: 1px 8px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+
+.description {
+    padding-top: 20px;
+    text-wrap: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* width: 700px; */
+    max-width: 700px;
+}

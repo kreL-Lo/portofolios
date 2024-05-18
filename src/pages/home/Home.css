@@ -1,0 +1,103 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.firstItem {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    gap: 70px;
+}
+
+@media (max-width: 900px) {
+    .firstItem {
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    .descriptionContainer {
+        width: 80% !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageContainer {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .descriptionContainer h1 {
+        padding-left: 0px !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .descriptionContainer {
+        width: 90% !important;
+    }
+
+    .imageContainer {
+        width: 170px !important;
+        height: 170px !important;
+    }
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+.descriptionContainer h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+    line-height: 1.5;
+}
+
+.descriptionContainer span {
+    text-wrap: wrap;
+}
+
+.descriptionContainer button {
+    background-color: #ff6464;
+}
+
+.imageContainer {
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+}
+
+.secondItem {
+    background-color: #edf7fa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* padding: 30px; */
+}
+
+/* pick first div from second item */
+.secondItem > div:first-child {
+    padding: 50;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.secondItem h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+}

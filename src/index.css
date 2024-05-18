@@ -2,16 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+body {
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+/* For Firefox */
+/* Track */
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(153, 153, 153, 0.5); /* Grey color with 50% opacity */
+}
+
+/* For IE, Edge, and Safari */
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(
+        241,
+        241,
+        241,
+        0.5
+    ); /* Light grey color with 50% opacity */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(153, 153, 153, 0.5); /* Grey color with 50% opacity */
 }

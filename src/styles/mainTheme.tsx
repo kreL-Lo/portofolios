@@ -1,9 +1,9 @@
 import { createTheme } from "@mui/material";
-import { lime, purple } from "@mui/material/colors";
+import { grey, blue, purple, } from "@mui/material/colors";
 
 const mainTheme = createTheme({
   palette: {
-    primary: lime,
+    primary: blue,
     secondary: purple
   }
 })

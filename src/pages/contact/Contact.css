@@ -1,0 +1,24 @@
+.hoverIcon {
+    color: white;
+}
+
+.hoverIconDiv:hover {
+    color: #262626;
+    background-color: white;
+}
+.hoverIconDiv:hover svg {
+    color: #262626;
+    background-color: white;
+}
+.hoverIconDiv {
+    background-color: #1b1b1b;
+}
+
+/*active state*/
+.hoverIconDivActive {
+    color: white;
+    background-color: white;
+}
+
+.hoverIconDivActive svg {
+}
