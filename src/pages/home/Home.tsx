@@ -29,7 +29,7 @@ const Home = () => {
           </div>
           <div>
             <Button variant="contained">
-              <a href="/CV.pdf" download>
+              <a href="./CV.pdf" download>
                 Download Resume
               </a>
             </Button>
