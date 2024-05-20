@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ThemeProvider } from '@mui/material'
+import { ThemeProvider, useMediaQuery } from '@mui/material'
 import Header from './components/Header'
 import mainTheme from './styles/mainTheme'
 import { BrowserRouter } from 'react-router-dom'
@@ -14,11 +14,13 @@ const App = () => {
     emailjs.init({
       publicKey: publicKey,
       limitRate: {
-        throttle: 100000,
+        throttle: 10000,
       },
     });
   }, []);
+  const isMobile = useMediaQuery(`(max-width:600px)`);
   return (
+
     <BrowserRouter>
       <ThemeProvider theme={mainTheme}>
         <div style={{
@@ -32,7 +34,8 @@ const App = () => {
 
           <div style={{
             overflowX: 'scroll',
-            height: 'calc(100vh - 16px) '
+            // height: 'calc(100vh - 16px) '
+            height: !isMobile ? 'calc(100vh - 16px)' : 'calc(100vh - 70px)'
             //make a cooler scrollbar
 
           }}>
