@@ -5,14 +5,17 @@ import '@fontsource/poppins';
 
 
 import App from './App';
+import { FancyLights } from './components/FancyLights/FancyLights';
 
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
-    <React.StrictMode>
+    <>
+      <FancyLights />
+
       <App />
-    </React.StrictMode>
+    </>
   );
 }

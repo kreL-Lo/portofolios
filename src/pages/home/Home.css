@@ -1,7 +1,6 @@
 .homeContainer {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 .firstItem {
@@ -11,6 +10,9 @@
     justify-content: center;
     padding: 80px;
     gap: 70px;
+    color: white;
+    z-index: 10;
+    height: 100vh;
 }
 
 @media (max-width: 900px) {

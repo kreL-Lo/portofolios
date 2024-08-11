@@ -1,15 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-    font-family: 'Poppins', sans-serif;
+code {
+    font-family: 'Signika-Regular';
 }
 
+* {
+    font-family: 'Signika-Regular';
+}
+@font-face {
+    font-family: 'Signika-Regular';
+    src: url('./fonts/Signika-Regular.ttf') format('truetype');
+}
 body {
-    overflow: hidden;
+    margin: 0;
+    font-family: 'Signika-Regular';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+    /* overflow: hidden; */
     overflow-x: hidden;
-    height: 100vh;
 }
 
 /* For Firefox */

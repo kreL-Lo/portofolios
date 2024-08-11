@@ -1,0 +1,46 @@
+:root {
+    /* set light size between 200px and 400 px using clamp*/
+
+    --light-size: clamp(200px, 50vw, 400px);
+    --primary-color: rgba(0, 102, 153, 1);
+}
+
+.fancy-lights {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.fancy-lights * {
+    overflow: hidden;
+}
+.fancy-light {
+    position: relative;
+    /* big circle */
+    width: var(--light-size);
+    height: var(--light-size);
+    background: radial-gradient(
+        circle,
+        var(--primary-color) 0%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    border-radius: 50%; /* Make it circular */
+    filter: blur(50px); /* Apply blur effect */
+    animation: scaleAnimation 3s infinite alternate ease-in-out; /* Add scale animation */
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+#fancy-light-2 {
+    translate: calc(100vw - var(--light-size));
+}

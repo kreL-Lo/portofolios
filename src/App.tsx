@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react'
-import { ThemeProvider, useMediaQuery } from '@mui/material'
 import Header from './components/Header'
-import mainTheme from './styles/mainTheme'
-import { BrowserRouter } from 'react-router-dom'
-import Router from './components/Routers'
-import Footer from './components/Footer'
 import emailjs from '@emailjs/browser';
+import Home from './pages/home/Home'
+import { FancyLights } from './components/FancyLights/FancyLights';
 
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
@@ -18,36 +15,27 @@ const App = () => {
       },
     });
   }, []);
-  const isMobile = useMediaQuery(`(max-width:600px)`);
   return (
 
-    <BrowserRouter>
-      <ThemeProvider theme={mainTheme}>
+    <div style={{
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh', // Ensure it takes the full height of the viewport
+        overflowX: 'hidden',
+
+      }}>
+        {/* <Header /> */}
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          // overflow: 'scroll'
-
-        }}
-        >
-          <Header />
-
-          <div style={{
-            overflowX: 'scroll',
-            // height: 'calc(100vh - 16px) '
-            height: !isMobile ? 'calc(100vh - 16px)' : 'calc(100vh - 70px)'
-            //make a cooler scrollbar
-
-          }}>
-            <div className="flex-1" style={{
-            }} >
-              <Router />
-            </div>
-            <Footer />
-          </div>
+          flex: 1,
+          overflowY: 'scroll',
+        }}>
+          <Home />
         </div>
-      </ThemeProvider>
-    </BrowserRouter>
+      </div>
+    </div>
+
   )
 }
 

@@ -1,0 +1,33 @@
+.nav-bar-items {
+	display: flex;
+	flex-direction: row;
+	/* space around */
+	justify-content: space-around;
+	width: clamp(200px, 50%, 300px);
+}
+
+.nav-bar-item {
+	opacity: 0.3;
+	transition: opacity 0.3s;
+	cursor: pointer;
+}
+
+.nav-bar-item:hover {
+	opacity: 1 !important;
+}
+
+@media screen and (max-width: 600px) {
+	.tooltip {
+		display: none;
+	}
+}
+.tooltip {
+	position: absolute;
+	display: block;
+	background-color: white;
+	color: black;
+	padding: 5px;
+	border-radius: 5px;
+	transform: scale(0);
+	transition: scale 0.3s;
+}
