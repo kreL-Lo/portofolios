@@ -24,16 +24,22 @@
     /* big circle */
     width: var(--light-size);
     height: var(--light-size);
-    background: radial-gradient(
-        circle,
-        var(--second-animation-color) 0%,
-        rgba(0, 0, 0, 1) 100%
-    );
+
     border-radius: 50%; /* Make it circular */
     filter: blur(50px); /* Apply blur effect */
+    /* add mix color blend */
+    mix-blend-mode: normal;
 }
 
 /* Keyframes for scaling animation */
+@keyframes opacityModifierAnimation {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @keyframes scaleAnimation {
     0% {
         transform: scale(1);
@@ -68,6 +74,7 @@
 /* Specific styles and animations for fancy-light-1 */
 #fancy-light-1 {
     animation: initialAnimation1 var(--first-animation-duration) forwards,
+        opacityModifierAnimation var(--first-animation-duration) forwards,
         scaleAnimation 3s infinite alternate ease-in-out
             var(--first-animation-duration),
         bounceAnimation1 5s infinite alternate ease-in-out
@@ -90,6 +97,7 @@
 /* Specific styles and animations for fancy-light-2 */
 #fancy-light-2 {
     animation: initialAnimation2 var(--first-animation-duration) forwards,
+        opacityModifierAnimation var(--first-animation-duration) forwards,
         scaleAnimation 3s infinite alternate ease-in-out
             var(--first-animation-duration),
         bounceAnimation2 5s infinite alternate ease-in-out
