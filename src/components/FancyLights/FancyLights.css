@@ -42,5 +42,8 @@
 }
 
 #fancy-light-2 {
-    translate: calc(100vw - var(--light-size));
+    /* position it bottom right corner */
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

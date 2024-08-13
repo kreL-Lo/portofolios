@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Header from './components/Header'
 import emailjs from '@emailjs/browser';
 import Home from './pages/home/Home'
-import { FancyLights } from './components/FancyLights/FancyLights';
 
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
@@ -15,27 +14,17 @@ const App = () => {
       },
     });
   }, []);
+
+  const scrollRef = useRef(null);
   return (
-
-    <div style={{
-    }}>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100vh', // Ensure it takes the full height of the viewport
-        overflowX: 'hidden',
-
-      }}>
-        {/* <Header /> */}
-        <div style={{
-          flex: 1,
-          overflowY: 'scroll',
-        }}>
+    <>
+      <Header scrollRef={scrollRef} />
+      <div className='main-content'>
+        <div className='main-content-wrapped' ref={scrollRef}>
           <Home />
         </div>
       </div>
-    </div>
-
+    </>
   )
 }
 

@@ -15,8 +15,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
-    /* overflow: hidden; */
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* For Firefox */
@@ -43,4 +42,16 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgba(153, 153, 153, 0.5); /* Grey color with 50% opacity */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-content-wrapped {
+    flex: 1;
+    overflow-y: scroll;
 }
