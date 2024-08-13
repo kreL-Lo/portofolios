@@ -1,8 +1,9 @@
 :root {
-    /* set light size between 200px and 400 px using clamp*/
-
+    /* set light size between 200px and 400 px using clamp */
     --light-size: clamp(200px, 50vw, 400px);
-    --primary-color: rgba(0, 102, 153, 1);
+    --first-animation-duration: 5s;
+    --second-animation-color: rgba(0, 102, 153, 1);
+    --first-animation-color: #8fff86;
 }
 
 .fancy-lights {
@@ -17,33 +18,95 @@
 .fancy-lights * {
     overflow: hidden;
 }
+
 .fancy-light {
-    position: relative;
+    position: absolute;
     /* big circle */
     width: var(--light-size);
     height: var(--light-size);
     background: radial-gradient(
         circle,
-        var(--primary-color) 0%,
+        var(--second-animation-color) 0%,
         rgba(0, 0, 0, 1) 100%
     );
     border-radius: 50%; /* Make it circular */
     filter: blur(50px); /* Apply blur effect */
-    animation: scaleAnimation 3s infinite alternate ease-in-out; /* Add scale animation */
 }
 
+/* Keyframes for scaling animation */
 @keyframes scaleAnimation {
     0% {
         transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
     }
     100% {
         transform: scale(1.5);
     }
 }
 
+/* Keyframes for bounce animation */
+@keyframes bounceAnimation1 {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(100vh - var(--light-size));
+    }
+}
+
+@keyframes bounceAnimation2 {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: calc(100vh - var(--light-size));
+    }
+}
+
+/* Specific styles and animations for fancy-light-1 */
+#fancy-light-1 {
+    animation: initialAnimation1 var(--first-animation-duration) forwards,
+        scaleAnimation 3s infinite alternate ease-in-out
+            var(--first-animation-duration),
+        bounceAnimation1 5s infinite alternate ease-in-out
+            var(--first-animation-duration);
+}
+
+@keyframes initialAnimation1 {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2);
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* Specific styles and animations for fancy-light-2 */
 #fancy-light-2 {
-    /* position it bottom right corner */
-    position: absolute;
+    animation: initialAnimation2 var(--first-animation-duration) forwards,
+        scaleAnimation 3s infinite alternate ease-in-out
+            var(--first-animation-duration),
+        bounceAnimation2 5s infinite alternate ease-in-out
+            var(--first-animation-duration);
     bottom: 0;
     right: 0;
+}
+
+@keyframes initialAnimation2 {
+    0% {
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%) scale(2);
+    }
+    100% {
+        bottom: 0;
+        right: 0;
+        transform: translate(0, 0) scale(1);
+    }
 }

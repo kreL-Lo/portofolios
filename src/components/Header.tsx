@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './Header.css'
 import { NavBarItems } from './NavBarItems/NavBarItems';
 import { Code } from '@mui/icons-material';
@@ -35,11 +35,11 @@ const Header = ({
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null); // Reference to the HeaderBar element
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isHeaderVisible) {
-      gsap.to(headerRef.current, { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
+      gsap.to(headerRef.current, { y: 100, opacity: 1, duration: 0.5, ease: 'power2.out' });
     } else {
-      gsap.to(headerRef.current, { y: -100, opacity: 0, duration: 0.5, ease: 'power2.in' });
+      gsap.to(headerRef.current, { y: 0, opacity: 0, duration: 0.5, ease: 'power2.in' });
     }
   }, [isHeaderVisible]);
   useEffect(() => {
