@@ -16,6 +16,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
     overflow: hidden;
+    /* behaviour smooth */
+    scroll-behavior: smooth;
 }
 
 /* For Firefox */
@@ -54,4 +56,25 @@ body {
 .main-content-wrapped {
     flex: 1;
     overflow-y: scroll;
+}
+
+:root {
+    --animation-duration: 2s;
+    --animation-delay: 1s;
+}
+
+.main-app-content {
+    transform: scale(0);
+    animation: popup var(--animation-duration) var(--animation-delay) forwards;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

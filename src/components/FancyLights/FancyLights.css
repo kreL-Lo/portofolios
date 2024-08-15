@@ -1,7 +1,7 @@
 :root {
     /* set light size between 200px and 400 px using clamp */
     --light-size: clamp(200px, 50vw, 400px);
-    --first-animation-duration: 5s;
+    --first-animation-duration: 2s;
     --second-animation-color: rgba(0, 102, 153, 1);
     --first-animation-color: #8fff86;
 }
