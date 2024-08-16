@@ -1,0 +1,11 @@
+.left-bar {
+    width: 40px;
+    height: 100vh;
+
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+}

@@ -1,0 +1,46 @@
+:root {
+    --animation-duration: 2s;
+    --animation-delay: 1s;
+    --border-width: thin;
+    --border-color: rgb(108, 108, 108, 0.5);
+}
+
+.main-grid {
+    transform: scale(0);
+    animation: popup var(--animation-duration) var(--animation-delay) forwards;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.main-grid {
+    margin: 10px;
+    height: calc(100vh - 20px);
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+    border-style: solid;
+    border-radius: 5px;
+    overflow: hidden;
+    /*
+ create a grid pattern as follows
+ top -> header
+ middle ->left bar | main content 
+    bottom -> footer
+    */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.main-content-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    overflow: hidden;
+}

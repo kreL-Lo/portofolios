@@ -1,0 +1,20 @@
+.main-footer {
+    width: 100vw;
+    height: 40px;
+
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+    border-style: solid;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.footer-circle {
+    width: 8px;
+    height: 8px;
+    /* using this color : #8fff86;create a linear gradient for the bg */
+    background: linear-gradient(90deg, #8fff86 0%, #00ff95 100%);
+    border-radius: 100%;
+}

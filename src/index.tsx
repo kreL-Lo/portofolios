@@ -20,6 +20,7 @@ if (rootElement) {
       <div className='main-app-content'>
         <App />
       </div>
+
     </>
   );
 }
