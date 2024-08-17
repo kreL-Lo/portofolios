@@ -18,3 +18,10 @@
     background: linear-gradient(90deg, #8fff86 0%, #00ff95 100%);
     border-radius: 100%;
 }
+
+.main-footer-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}

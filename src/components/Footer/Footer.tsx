@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css';
 import { CircleOutlined, Code } from '@mui/icons-material';
+import { SocialIcons } from '../SocialMinimize/SocialMinimize';
 
 const Footer = () => {
 
@@ -11,6 +12,9 @@ const Footer = () => {
       <span className='square-box'>
         <div className='footer-circle' />
       </span>
+      <div className='main-footer-icons'>
+        <SocialIcons />
+      </div>
     </div>
   )
 }
