@@ -1,5 +1,4 @@
 :root {
-    /* set light size between 200px and 400 px using clamp */
     --light-size: clamp(200px, 50vw, 400px);
     --first-animation-duration: 2s;
     --second-animation-color: rgba(0, 102, 153, 1);
@@ -13,6 +12,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .fancy-lights * {
@@ -21,14 +21,13 @@
 
 .fancy-light {
     position: absolute;
-    /* big circle */
     width: var(--light-size);
     height: var(--light-size);
-
-    border-radius: 50%; /* Make it circular */
-    filter: blur(50px); /* Apply blur effect */
-    /* add mix color blend */
-    mix-blend-mode: normal;
+    border-radius: 50%;
+    filter: blur(50px);
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    transition: transform 0.3s;
 }
 
 /* Keyframes for scaling animation */

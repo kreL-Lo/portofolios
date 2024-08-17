@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 
-import { Code } from '@mui/icons-material';
+import { Code, Dehaze } from '@mui/icons-material';
 import { Logo } from './Logo';
 
 export const HeaderBar = () => {
@@ -16,6 +16,9 @@ export const HeaderBar = () => {
         <div className='app-header-middle'>
           <Logo />
         </div>
+      </div>
+      <div className='header-right-item'>
+        <Dehaze />
       </div>
     </div >
   );

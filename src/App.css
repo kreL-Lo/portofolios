@@ -44,3 +44,10 @@
     grid-template-columns: auto 1fr;
     overflow: hidden;
 }
+
+/*  if mobile view change to  */
+@media (max-width: 768px) {
+    .main-content-grid {
+        grid-template-columns: 1fr;
+    }
+}

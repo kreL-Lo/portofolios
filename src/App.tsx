@@ -46,9 +46,12 @@ const App = () => {
     });
   };
 
+
+
+
   return (
     <>
-      <div className='main-grid'>
+      <div className='main-grid' >
         <Header scrollRef={scrollRef} />
         <div className='main-content-grid'>
           <LeftBar />
