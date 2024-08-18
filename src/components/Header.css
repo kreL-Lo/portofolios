@@ -179,3 +179,18 @@
         display: none;
     }
 }
+
+.header-right-item svg {
+    opacity: 1;
+    /* add transition */
+    transition: opacity 0.1s;
+}
+
+/*  on hover opacity to 0.5 */
+.header-right-item:hover svg {
+    opacity: 0.5;
+}
+
+.header-right-item.active svg {
+    opacity: 0.5;
+}

@@ -7,6 +7,7 @@ import './App.css';
 import { CustomScrollBar } from './components/ScrollBar/CustomScrollBar';
 import Footer from './components/Footer/Footer';
 import LeftBar from './components/LeftBar/LeftBar';
+import { MobileCover } from './components/MobileCover/MobileCover';
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
 const App = () => {
@@ -19,7 +20,6 @@ const App = () => {
     });
   }, []);
 
-  const scrollRef = useRef(null);
 
   const [bounds, setBounds] = useState({
     scroll: {
@@ -47,15 +47,16 @@ const App = () => {
   };
 
 
-
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <>
       <div className='main-grid' >
-        <Header scrollRef={scrollRef} />
+        <Header setIsActive={setIsActive} isActive={isActive} />
         <div className='main-content-grid'>
           <LeftBar />
-          <div className='main-content' ref={scrollRef} onScroll={handleScroll}>
+          <div className='main-content' onScroll={handleScroll}>
+            <MobileCover isActive={isActive} />
             <Home />
           </div>
 

@@ -1,0 +1,66 @@
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import './MobileCover.css'
+
+const items = [
+    {
+        id: '01',
+        title: 'about',
+    },
+    {
+        id: '02',
+        title: 'projects',
+    },
+    {
+        id: '03',
+        title: 'contact',
+    },
+]
+export const MobileCover = ({ isActive }) => {
+    const coverRef = useRef(null)
+
+    useEffect(() => {
+        if (isActive) {
+            // Make the cover visible before the slide-in animation
+            gsap.set(coverRef.current, { display: 'block' })
+
+            // Animate the cover height from 0% to 100%
+            gsap.to(coverRef.current, {
+                height: 'calc(100vh - 102px)',
+                duration: 0.5,
+                ease: 'power2.out',
+            })
+        } else {
+            // Animate the cover height back to 0%
+            gsap.to(coverRef.current, {
+                height: '0%',
+                duration: 0.5,
+                ease: 'power2.in',
+                onComplete: () => {
+                    // Hide the cover after the animation completes
+                    gsap.set(coverRef.current, { display: 'none' })
+                },
+            })
+        }
+    }, [isActive])
+
+    return (
+        <div className="mobile-cover" ref={coverRef}>
+            <div className="mobile-cover-content">
+                {
+                    // Render the items
+                    items.map((item) => (
+                        <div key={item.id} className="mobile-cover-item">
+                            <div className="mobile-cover-item-id">
+                                {item.id}
+                            </div>
+                            <div className="mobile-cover-item-title">
+                                {item.title}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    )
+}
