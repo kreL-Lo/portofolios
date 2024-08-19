@@ -16,7 +16,10 @@ const icons = [
     icon: Mail
   }
 ]
-const LeftBar = () => {
+const LeftBar = ({ activeScroll, scrollToSection }: {
+  activeScroll: any,
+  scrollToSection: any
+}) => {
   const iconStyle = {
 
     fontSize: '1.2rem'
@@ -29,8 +32,10 @@ const LeftBar = () => {
           const Icon = icon.icon;
           return (
             <div key={index} className='left-bar-icon' >
-              <a data-tooltip-id={`icon-${index}`} >
-                <Icon style={iconStyle} />
+              <a data-tooltip-id={`icon-${index}`} onClick={() => {
+                scrollToSection(index)
+              }}>
+                <Icon style={{ ...iconStyle, color: index === activeScroll ? 'var(--first-animation-color' : 'white' }} />
               </a>
               <Tooltip id={`icon-${index}`} place='right' variant='dark' delayShow={10} delayHide={50} >
                 {icon.content}

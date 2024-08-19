@@ -31,9 +31,14 @@ const App = () => {
       y: 0
     }
   })
+  const [isActive, setIsActive] = useState(false);
 
+
+  const [activeScroll, setActiveScroll] = useState(0);
   const handleScroll = (scroll: any) => {
     const target = scroll.currentTarget;
+
+
     setBounds({
       scroll: {
         y: target.scrollTop,
@@ -44,19 +49,83 @@ const App = () => {
         y: target.scrollHeight - target.clientHeight,
       }
     });
+
+    // Query sections by ID
+    const firstSection = document.getElementById('first-section');
+    const secondSection = document.getElementById('second-section');
+    const thirdSection = document.getElementById('third-section');
+    const windowHeight = target.clientHeight;
+    if (firstSection && secondSection && thirdSection) {
+      const firstSectionTop = firstSection.offsetTop;
+      const secondSectionTop = secondSection.offsetTop;
+      const thirdSectionTop = thirdSection.offsetTop;
+
+      const scrollY = target.scrollTop;
+      const middleScreen = windowHeight / 2;
+
+      if (scrollY >= firstSectionTop - middleScreen && scrollY < secondSectionTop - middleScreen) {
+        setActiveScroll(0);
+      } else if (scrollY >= secondSectionTop - middleScreen && scrollY < thirdSectionTop - middleScreen) {
+        setActiveScroll(1);
+      } else if (scrollY >= thirdSectionTop - middleScreen) {
+        setActiveScroll(2);
+      }
+    }
   };
 
 
-  const [isActive, setIsActive] = useState(false);
+  // Function to scroll to a section based on the index
+  function scrollToSection(index: number) {
+    const firstSection = document.getElementById('first-section');
+    const secondSection = document.getElementById('second-section');
+    const thirdSection = document.getElementById('third-section');
+
+    // Select the scrollable container
+    const scrollableContainer = document.querySelector('.main-content');
+
+    if (!scrollableContainer) {
+      console.error('Scrollable container not found.');
+      return;
+    }
+
+    let section;
+
+    switch (index) {
+      case 0:
+        section = firstSection;
+        break;
+      case 1:
+        section = secondSection;
+        break;
+      case 2:
+        section = thirdSection;
+        break;
+      default:
+        console.error("Invalid index. Please provide an index between 0 and 2.");
+        return;
+    }
+
+    // Check if the section exists
+    if (section) {
+      const sectionTop = section.offsetTop;
+
+      // Scroll the container to the section's position
+      scrollableContainer.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth'
+      });
+    }
+  }
+
 
   return (
     <>
       <div className='main-grid' >
         <Header setIsActive={setIsActive} isActive={isActive} />
         <div className='main-content-grid'>
-          <LeftBar />
+          <LeftBar activeScroll={activeScroll} scrollToSection={scrollToSection} />
           <div className='main-content' onScroll={handleScroll}>
-            <MobileCover isActive={isActive} />
+            <MobileCover isActive={isActive} activeScroll={activeScroll} setIsActive={setIsActive} scrollToSection={scrollToSection} />
             <Home />
           </div>
 

@@ -16,7 +16,12 @@ const items = [
         title: 'contact',
     },
 ]
-export const MobileCover = ({ isActive }) => {
+export const MobileCover = ({
+    isActive,
+    activeScroll,
+    setIsActive,
+    scrollToSection,
+}) => {
     const coverRef = useRef(null)
 
     useEffect(() => {
@@ -49,12 +54,26 @@ export const MobileCover = ({ isActive }) => {
             <div className="mobile-cover-content">
                 {
                     // Render the items
-                    items.map((item) => (
-                        <div key={item.id} className="mobile-cover-item">
+                    items.map((item, index) => (
+                        <div
+                            key={item.id}
+                            className="mobile-cover-item"
+                            onClick={() => {
+                                console.log('clicked', item.id)
+                                // animate the cover back
+                                setIsActive(false)
+                                // add logic to scroll to that position
+                                scrollToSection(index)
+                            }}
+                        >
                             <div className="mobile-cover-item-id">
                                 {item.id}
                             </div>
-                            <div className="mobile-cover-item-title">
+                            <div
+                                className={`mobile-cover-item-title ${
+                                    index === activeScroll ? 'active' : ''
+                                }`}
+                            >
                                 {item.title}
                             </div>
                         </div>
