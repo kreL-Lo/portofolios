@@ -31,11 +31,11 @@ const LeftBar = ({ activeScroll, scrollToSection }: {
         icons.map((icon, index) => {
           const Icon = icon.icon;
           return (
-            <div key={index} className='left-bar-icon' >
+            <div key={index} className={`left-bar-icon ${index === activeScroll ? 'active' : ''}`} >
               <a data-tooltip-id={`icon-${index}`} onClick={() => {
                 scrollToSection(index)
               }}>
-                <Icon style={{ ...iconStyle, color: index === activeScroll ? 'var(--first-animation-color' : 'white' }} />
+                <Icon style={iconStyle} />
               </a>
               <Tooltip id={`icon-${index}`} place='right' variant='dark' delayShow={10} delayHide={50} >
                 {icon.content}

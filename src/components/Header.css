@@ -183,7 +183,7 @@
 .header-right-item svg {
     opacity: 1;
     /* add transition */
-    transition: opacity 0.1s;
+    transition: all 0.3s;
 }
 
 /*  on hover opacity to 0.5 */
@@ -193,4 +193,6 @@
 
 .header-right-item.active svg {
     opacity: 0.5;
+    /* rotate  */
+    transform: rotate(-90deg);
 }
