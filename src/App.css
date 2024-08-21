@@ -29,12 +29,6 @@
     border-style: solid;
     border-radius: 5px;
     overflow: hidden;
-    /*
- create a grid pattern as follows
- top -> header
- middle ->left bar | main content 
-    bottom -> footer
-    */
     display: grid;
     grid-template-rows: auto 1fr auto;
 }

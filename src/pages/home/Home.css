@@ -3,6 +3,9 @@
     flex-direction: column;
 }
 
+.homeContainer * {
+    color: white;
+}
 .firstItem {
     display: flex;
     flex-direction: row-reverse;
@@ -67,4 +70,99 @@
     font-weight: bold;
     padding: 10px;
     display: flex;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-header {
+    font-size: 0.8rem;
+
+    /* padding-right: 30px; */
+    line-height: 1.5;
+    color: gray;
+}
+
+.about-content {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.about-content h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+    line-height: 1.2;
+    margin-top: 0;
+    /* center it */
+    text-align: center;
+}
+
+.about-content-header-creative {
+    color: var(--first-animation-color);
+}
+
+.about-sub-header {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    word-break: keep-all;
+    width: 60%;
+    margin: auto;
+}
+
+.about-sub-header span {
+    color: gray;
+}
+
+#first-section {
+    position: relative;
+    overflow: hidden;
+}
+
+#first-section::before,
+#first-section::after {
+    content: 'code';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    font-size: 30rem;
+    letter-spacing: 50px;
+    font-weight: bold;
+    color: rgb(101, 101, 101);
+    white-space: nowrap;
+    animation: moveText 30s linear infinite;
+    opacity: 0.05; /* Reduce opacity for a subtle effect */
+}
+
+@keyframes moveText {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+#first-section::before {
+    left: 100%; /* Starts off-screen */
+}
+
+#first-section::after {
+    left: 200%; /* Starts further off-screen to create the repeating effect */
 }

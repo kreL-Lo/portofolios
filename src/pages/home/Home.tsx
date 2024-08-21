@@ -18,23 +18,19 @@ const Home = () => {
 
 const Section1 = () => {
   return (
-    <div className="firstItem" id="first-section">
-      <div className="imageContainer">
-        <img
-          src={profile}
-          alt="random"
-          className="imageContainer"
-        />
+    <div className="about-container" id="first-section">
+      <div className='about-header'>
+        HOME
       </div>
-      <div className="descriptionContainer">
+      <div className="about-content">
         <h1>
-          Hi, I am Ciprian,
+          Hi, I'm Ciprian, a
           <br />
-          Developer
+          <span className='about-content-header-creative'> creative </span> developer
         </h1>
-        <div>
+        <div className='about-sub-header'>
           <span>
-            &emsp; A passionate and optimistic developer dedicated to crafting innovative solutions with precision and creativity
+            &emsp; A passionate and optimistic developer dedicated to crafting innovative solutions
           </span>
         </div>
       </div>
@@ -54,7 +50,7 @@ const Section2 = () => {
       </div>
       <div className="descriptionContainer">
         <h1>
-          Hi, I am Ciprian,
+          Hi, I am Ciprian, a
           <br />
           Developer
         </h1>

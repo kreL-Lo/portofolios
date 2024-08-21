@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 
-import { Code, Dehaze, Opacity } from '@mui/icons-material';
+import { Close, Code, Dehaze, Fullscreen, Minimize, Opacity } from '@mui/icons-material';
 import { Logo } from './Logo';
 
 
@@ -24,19 +24,16 @@ function debounce(func: any, delay: any) {
 }
 
 export const HeaderBar = (
-  { setIsActive, isActive }: {
+  { setIsActive, isActive, }: {
     setIsActive: any,
-    isActive: boolean
+    isActive: boolean,
   }
 ) => {
   const debounced = debounce(() => {
     setIsActive(!isActive);
   }, 300);
 
-  const styleDehaze = {
-    color: 'white',
-    opacity: isActive ? 0.5 : 1
-  }
+
   return (
     <div className="app-header-bar">
       <span className='square-box'>
@@ -62,7 +59,7 @@ interface HeaderProps {
 
 const Header = ({
   setIsActive,
-  isActive
+  isActive,
 }: HeaderProps) => {
 
 
@@ -72,5 +69,39 @@ const Header = ({
     </>
   );
 }
+
+
+const CardTopRightButtons = ({ }: {
+}) => {
+  return (
+    <div className='app-header-icons'>
+      <div
+        className='card-button-icon'
+        style={{
+          position: 'relative',
+          top: -6,
+        }}
+      >
+        <Minimize />
+      </div>
+      <div
+        className='card-button-icon'
+        onClick={(event) => {
+          // check if fullscreen
+          if (!document.fullscreenElement) {
+            document.body.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        }}
+      >
+        <Fullscreen />
+      </div>
+      <div className='card-button-icon'>
+        <Close />
+      </div>
+    </div>
+  );
+};
 
 export default Header;

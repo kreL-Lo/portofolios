@@ -30,7 +30,7 @@ export const links = {
     github: 'https://github.com/kreL-Lo',
     instagram: 'https://www.instagram.com/ciprianmiru/',
 }
-export const SocialMinimize = ({ setMinimize }) => {
+export const SocialMinimize = ({ handleMinimize }) => {
     const iconStyle = {
         width: 30,
         height: 30,
@@ -43,7 +43,7 @@ export const SocialMinimize = ({ setMinimize }) => {
                 <div
                     className="social-minimize-close"
                     onClick={() => {
-                        setMinimize((state) => !state)
+                        handleMinimize()
                     }}
                 >
                     <Close />

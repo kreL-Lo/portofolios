@@ -1,4 +1,11 @@
-[] loading screen
-  same as https://www.stefanobartoletti.it/contact/
+[] components
+  [] basic 
+[] homepage work
+  [] about
+  [] projects
+  [] contact  
+    [] 
 
-[]
+
+[] fix mobile view 
+[] try to add back loocomotive scroll
