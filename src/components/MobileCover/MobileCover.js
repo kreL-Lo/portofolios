@@ -31,7 +31,7 @@ export const MobileCover = ({
 
             // Animate the cover height from 0% to 100%
             gsap.to(coverRef.current, {
-                height: 'calc(100vh - 102px)',
+                height: 'calc(100vh - 161px)',
                 duration: 0.5,
                 ease: 'power2.out',
             })
