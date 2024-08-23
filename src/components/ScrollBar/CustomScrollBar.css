@@ -5,7 +5,7 @@
     left: calc(100vw - 15px);
     width: 2px;
     height: calc(100vh - 125px);
-    z-index: 100;
+    z-index: 1000;
     margin-top: 65px;
 }
 

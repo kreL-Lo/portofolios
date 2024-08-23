@@ -1,14 +1,15 @@
 import React from 'react'
 //import profile.jpeg from src/assets
-import profile from '../../assets/img/profile.jpeg'
 import './Home.css'
-
+import { Card } from '../../components/card/Card'
+import profileIcon from '../../assets/img/profile.jpeg';
 const Home = () => {
   return (
     <>
       <div className="home-container" >
 
         <Section1 />
+
         <Section2 />
         <Section3 />
       </div>
@@ -43,7 +44,19 @@ const Section2 = () => {
   return (
     <div className="firstItem" id="second-section" >
       <div className="imageContainer">
+        <div style={{
+          marginLeft: 50
+        }}>
+          <Card title='Portrait'>
 
+
+            <img src={profileIcon} alt="profile" style={{
+              width: 200,
+              height: 200,
+              objectFit: 'cover'
+            }} />
+          </Card>
+        </div>
       </div>
       <div className="descriptionContainer">
         <h1>

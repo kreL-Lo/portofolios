@@ -1,0 +1,42 @@
+.card {
+    border-width: var(--border-width);
+    border-color: var(--border-color);
+    border-style: solid;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.5s;
+}
+
+.card-header {
+    grid-column: 1 / -1; /* Make header span across all columns */
+    display: flex;
+    justify-content: space-between;
+    /*  add border to bottom */
+    border-bottom: var(--border-width) var(--border-color) solid;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 8px;
+}
+
+.card-header-title {
+    padding-left: 5px;
+    /* make it all lower case */
+    text-transform: lowercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.card-content {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.card-content img {
+    display: block; /* Prevent inline elements' spacing issue */
+    width: 100%;
+    height: auto; /* Make sure the image scales properly */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}

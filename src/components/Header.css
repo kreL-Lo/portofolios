@@ -130,18 +130,10 @@
     /* justify-content: space-between; */
     align-items: center;
     /* width: 100%; */
-    gap: 5px;
-    padding-right: 30px;
-
+    gap: 1px;
     z-index: 1;
 }
 
-/* if mobile disable app-header-icons */
-@media (max-width: 768px) {
-    .app-header-icons {
-        display: none;
-    }
-}
 .app-card {
     transition: all 0.3s;
     transform: scale(1), translate(0, 0);
@@ -211,11 +203,10 @@
 }
 .card-button-icon {
     opacity: 0.5;
-    cursor: pointer;
-
     transition: opacity 0.3s;
 }
 
-.card-button-icon:hover {
-    opacity: 1;
+.card-button-icon > svg {
+    width: 20px;
+    height: 20px;
 }

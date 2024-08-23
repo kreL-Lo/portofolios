@@ -71,29 +71,22 @@ const Header = ({
 }
 
 
-const CardTopRightButtons = ({ }: {
+export const CardTopRightButtons = ({ }: {
 }) => {
+
+
   return (
     <div className='app-header-icons'>
       <div
         className='card-button-icon'
         style={{
           position: 'relative',
-          top: -6,
         }}
       >
         <Minimize />
       </div>
       <div
         className='card-button-icon'
-        onClick={(event) => {
-          // check if fullscreen
-          if (!document.fullscreenElement) {
-            document.body.requestFullscreen();
-          } else {
-            document.exitFullscreen();
-          }
-        }}
       >
         <Fullscreen />
       </div>

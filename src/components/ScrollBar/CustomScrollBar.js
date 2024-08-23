@@ -3,10 +3,11 @@ import React, { useEffect, useMemo, useState, useRef } from 'react'
 import { gsap } from 'gsap'
 
 const THUMB_HEIGHT = 100
-const AUTO_HIDE_DELAY = 800 // 1 second delay before hiding the scrollbar
+const AUTO_HIDE_DELAY = 800 // 0.8 second delay before hiding the scrollbar
 
 export const CustomScrollBar = ({ bounds }) => {
     const y = bounds?.scroll.y || 0
+    console.log('here', y)
     const scrollLimitY = bounds?.limit.y || 0
     const ref = useRef(null)
     const thumbRef = useRef(null)
@@ -15,17 +16,14 @@ export const CustomScrollBar = ({ bounds }) => {
     const [isThumbVisible, setThumbVisible] = useState(false)
 
     useEffect(() => {
-        const resizeObserver = new ResizeObserver((entries) => {
-            const { height } = entries[0].contentRect
-            setBoxHeight(height)
-        })
         if (ref.current) {
+            const resizeObserver = new ResizeObserver((entries) => {
+                const { height } = entries[0].contentRect
+                setBoxHeight(height)
+            })
             resizeObserver.observe(ref.current)
-        }
-        return () => {
-            if (ref.current) {
-                resizeObserver.unobserve(ref.current)
-            }
+
+            return () => resizeObserver.disconnect()
         }
     }, [])
 
@@ -47,28 +45,20 @@ export const CustomScrollBar = ({ bounds }) => {
     }, [clampedThumbPosition])
 
     useEffect(() => {
-        // Show the scrollbar thumb on scroll
         setThumbVisible(true)
 
-        // Clear any existing timeout
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current)
         }
 
-        // Set a timeout to hide the scrollbar thumb
         timeoutRef.current = setTimeout(() => {
             setThumbVisible(false)
         }, AUTO_HIDE_DELAY)
 
-        return () => {
-            // Cleanup timeout on unmount or scroll changes
-            clearTimeout(timeoutRef.current)
-        }
+        return () => clearTimeout(timeoutRef.current)
     }, [y])
 
-    const isScrollable = useMemo(() => {
-        return scrollLimitY > boxHeight
-    }, [scrollLimitY, boxHeight])
+    const isScrollable = scrollLimitY > boxHeight
 
     return (
         <div className="custom-scroll" ref={ref}>
