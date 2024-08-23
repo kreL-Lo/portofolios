@@ -6,7 +6,8 @@ import './Home.css'
 const Home = () => {
   return (
     <>
-      <div className="homeContainer" >
+      <div className="home-container" >
+
         <Section1 />
         <Section2 />
         <Section3 />
@@ -42,11 +43,7 @@ const Section2 = () => {
   return (
     <div className="firstItem" id="second-section" >
       <div className="imageContainer">
-        <img
-          src={profile}
-          alt="random"
-          className="imageContainer"
-        />
+
       </div>
       <div className="descriptionContainer">
         <h1>
@@ -71,11 +68,7 @@ const Section3 = () => {
     <div id="third-section">
 
       <div className="imageContainer">
-        <img
-          src={profile}
-          alt="random"
-          className="imageContainer"
-        />
+
       </div>
       <div className="descriptionContainer">
         <h1>

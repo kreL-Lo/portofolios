@@ -32,6 +32,12 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+/* if mobile */
+@media (max-width: 768px) {
+    .main-grid {
+        height: calc(100vh - 80px);
+    }
+}
 
 .main-content-grid {
     display: grid;

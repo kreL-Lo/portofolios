@@ -8,7 +8,6 @@ import { CustomScrollBar } from './components/ScrollBar/CustomScrollBar';
 import Footer from './components/Footer/Footer';
 import LeftBar from './components/LeftBar/LeftBar';
 import { MobileCover } from './components/MobileCover/MobileCover';
-import { SocialMinimize } from './components/SocialMinimize/SocialMinimize';
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
 const App = () => {
