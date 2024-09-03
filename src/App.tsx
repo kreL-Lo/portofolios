@@ -8,6 +8,14 @@ import { CustomScrollBar } from './components/ScrollBar/CustomScrollBar';
 import Footer from './components/Footer/Footer';
 import LeftBar from './components/LeftBar/LeftBar';
 import { MobileCover } from './components/MobileCover/MobileCover';
+
+function mapRange(x: number) {
+
+  const y = 200 - 2 * x;
+
+  return y;
+}
+
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
 const App = () => {
@@ -72,6 +80,28 @@ const App = () => {
         setActiveScroll(2);
       }
     }
+
+
+
+    const image: any = document.querySelector('.portrait-bg-col');
+    if (image) {
+      console.log('here', image);
+
+
+      const progress = target.scrollTop / (target.scrollHeight - target.clientHeight);
+      console.log(progress)
+      const nextPercentage = mapRange(progress * 100);
+      image.animate(
+        {
+          backgroundPosition: `50% ${nextPercentage}%`,
+        },
+        { duration: 2000, fill: 'both' }
+      );
+
+      // image.style.transform = `translateY(${offset}px)`;
+      //move the background image 
+
+    }
   };
 
 
@@ -119,6 +149,28 @@ const App = () => {
   }
 
 
+  useEffect(() => {
+    setTimeout(() => {
+      //get url query parameter section and scroll to that section
+      const urlParams = new URLSearchParams(window.location.search);
+      const section = urlParams.get('section');
+      if (section) {
+        switch (section) {
+          case 'about':
+            scrollToSection(0);
+            break;
+          case 'projects':
+            scrollToSection(1);
+            break;
+          case 'contact':
+            scrollToSection(2);
+            break;
+          default:
+            break;
+        }
+      }
+    }, 1000)
+  }, [])
   return (
     <>
       <div className='main-grid' >

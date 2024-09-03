@@ -7,7 +7,6 @@ const AUTO_HIDE_DELAY = 800 // 0.8 second delay before hiding the scrollbar
 
 export const CustomScrollBar = ({ bounds }) => {
     const y = bounds?.scroll.y || 0
-    console.log('here', y)
     const scrollLimitY = bounds?.limit.y || 0
     const ref = useRef(null)
     const thumbRef = useRef(null)

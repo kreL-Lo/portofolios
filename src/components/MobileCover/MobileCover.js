@@ -59,7 +59,6 @@ export const MobileCover = ({
                             key={item.id}
                             className="mobile-cover-item"
                             onClick={() => {
-                                console.log('clicked', item.id)
                                 // animate the cover back
                                 setIsActive(false)
                                 // add logic to scroll to that position

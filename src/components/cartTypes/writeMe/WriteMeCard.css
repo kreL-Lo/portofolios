@@ -1,0 +1,126 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.input-container input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+
+    background-color: black;
+
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.write-me-container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 50px;
+}
+
+/* do same css as of input on textarea */
+.write-me-container textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+
+    background-color: black;
+
+    border-radius: 5px;
+    font-size: 16px;
+    /*  make it 4 rows */
+    height: 80px;
+}
+
+/* add matching style to submit-button */
+.write-me-container button {
+    padding: 15px 20px;
+    border: 1px solid var(--border-color);
+
+    background-color: black;
+
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+
+    /*  text lower case */
+    /* center */
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* add transition */
+    transition: all 0.3s ease;
+}
+/* on hover add animation that change background color from left to right */
+
+.rotate {
+    animation: rotate 2s linear infinite;
+}
+
+/* add animation to rotate on rotate */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.warning-alert {
+    background-color: #3a2d09; /* A dark background color */
+    border: 1px solid #d9a524; /* Border color similar to the one in the image */
+    color: #d9a524; /* Text color matching the image */
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* make it for warning-error with red color*/
+.warning-error {
+    background-color: #4d0000; /* A dark red background color */
+    border: 1px solid #ff4c4c; /* Border color similar to a bright red */
+    color: #ff4c4c; /* Text color matching the bright red */
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-success {
+    background-color: #0d3300; /* A dark green background color */
+    border: 1px solid #4caf50; /* Border color similar to a bright green */
+    color: #4caf50; /* Text color matching the bright green */
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.warning-icon {
+    margin-right: 12px;
+    font-size: 24px;
+}

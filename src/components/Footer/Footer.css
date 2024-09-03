@@ -25,3 +25,98 @@
     align-items: center;
     padding-right: 20px;
 }
+
+.work-together-button {
+    letter-spacing: 1px;
+    margin-right: 10px;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    background-color: black;
+    z-index: 1;
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 600ms, transform 600ms;
+    &:before {
+        content: '';
+        z-index: -1;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-60deg, #253624 50%, transparent 50%);
+        background-size: 250%;
+        transition: background-position 1000ms;
+        transform: rotate(180deg);
+    }
+    &:hover,
+    &:focus {
+        /* color: white; */
+        border-color: var(--first-animation-color);
+
+        color: var(--first-animation-color);
+
+        &:before {
+            background-position: 100% 100%;
+            transform: rotate(0deg);
+        }
+    }
+}
+
+/* if mobile */
+@media screen and (max-width: 768px) {
+    .social-icons-footer {
+        display: none;
+    }
+}
+.letter {
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-together-button:hover .letter,
+.work-together-button:active .letter {
+    animation: wave 0.6s ease-in-out forwards;
+    animation-delay: calc(0.05s * var(--index));
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.letter:nth-child(1) {
+    --index: 0;
+}
+.letter:nth-child(2) {
+    --index: 1;
+}
+.letter:nth-child(3) {
+    --index: 2;
+}
+.letter:nth-child(4) {
+    --index: 3;
+}
+.letter:nth-child(5) {
+    --index: 4;
+}
+.letter:nth-child(6) {
+    --index: 5;
+}
+.letter:nth-child(7) {
+    --index: 6;
+}
+/* Continue for all letters */

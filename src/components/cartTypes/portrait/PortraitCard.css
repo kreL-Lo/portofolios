@@ -1,0 +1,7 @@
+.potrait-bg {
+    background-image: url('../../../assets/img/profile.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+}

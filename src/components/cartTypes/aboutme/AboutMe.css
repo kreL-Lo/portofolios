@@ -1,0 +1,49 @@
+.r {
+    color: red;
+}
+
+.g {
+    color: green;
+}
+.b {
+    color: blue;
+}
+
+.about-me-container {
+    font-weight: bold;
+    padding: 20px;
+    letter-spacing: 1.5px;
+    padding-left: 30px;
+    width: 100%;
+    max-width: 50ch;
+}
+
+.about-me-container p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.gr {
+    color: grey;
+}
+
+.where-i-work-container {
+    font-weight: bold;
+    padding: 20px;
+    letter-spacing: 1.5px;
+    padding-left: 30px;
+    width: 100%;
+    max-width: 50ch;
+}
+
+.hobbies-container {
+    font-weight: bold;
+    /* padding: 10px; */
+    letter-spacing: 1.5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 50ch;
+}

@@ -1,11 +1,11 @@
-[] components
-  [] basic 
-[] homepage work
-  [] about
-  [] projects
-  [] contact  
-    [] 
+[x] collaboration
+[] footer
 
-
-[] fix mobile view 
-[] try to add back loocomotive scroll
+[] make all other components responsive
+  [] about me 
+  [] where i work
+[] make card movably by click
+[] put things together
+[] make modal for write-me 
+[] decide the sections and how the flow will go 
+[] projects section 

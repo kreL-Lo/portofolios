@@ -3,6 +3,10 @@ import React from 'react'
 import './Home.css'
 import { Card } from '../../components/card/Card'
 import profileIcon from '../../assets/img/profile.jpeg';
+import { PotraitCard } from '../../components/cartTypes/portrait/PortraitCard';
+import { WriteMeCard } from '../../components/cartTypes/writeMe/WriteMeCard';
+import { AboutMe, Hobbies, WhereIWork } from '../../components/cartTypes/aboutme/AboutMe';
+import { Collaboration } from '../../components/cartTypes/collaboration/Collaboration';
 const Home = () => {
   return (
     <>
@@ -47,15 +51,14 @@ const Section2 = () => {
         <div style={{
           marginLeft: 50
         }}>
-          <Card title='Portrait'>
+          <PotraitCard />
 
+          <WriteMeCard />
+          <AboutMe />
+          <WhereIWork />
+          <Hobbies />
+          <Collaboration />
 
-            <img src={profileIcon} alt="profile" style={{
-              width: 200,
-              height: 200,
-              objectFit: 'cover'
-            }} />
-          </Card>
         </div>
       </div>
       <div className="descriptionContainer">
