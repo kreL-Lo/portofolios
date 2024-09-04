@@ -1,0 +1,64 @@
+.bottom-footer {
+    margin-top: 50px;
+    padding: 50px 120px;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    border-top: 1px solid var(--border-color);
+    background-color: rgb(0, 0, 0, 0.5);
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .bottom-footer {
+        flex-direction: column;
+        padding: 0;
+        /* center */
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .bottom-half {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+.top-half {
+}
+
+.bottom-half {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+.bottom-half > * {
+    color: gray;
+}
+
+.kudos-class {
+    color: gray;
+    cursor: pointer;
+}
+
+/* add on hover */
+.kudos-class:hover {
+    color: white;
+}
+
+.kudos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

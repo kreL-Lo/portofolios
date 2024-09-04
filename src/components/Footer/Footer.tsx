@@ -3,7 +3,7 @@ import './Footer.css';
 import { SocialIcons } from '../SocialMinimize/SocialMinimize';
 import { ArrowBack } from '@mui/icons-material';
 
-export const WorkTogetherButton = ({ size = 'normal' }) => {
+export const WorkTogetherButton = ({ size = 'normal', onClick }: any) => {
   const sizebleStyle: any = {}
   if (size === 'large') {
     sizebleStyle['fontSize'] = '1.2rem';
@@ -19,6 +19,8 @@ export const WorkTogetherButton = ({ size = 'normal' }) => {
       // center 
       ...sizebleStyle,
 
+    }} onClick={() => {
+      onClick();
     }}>
       <div className='work-together-button-text' style={{
         // center
@@ -44,7 +46,7 @@ export const WorkTogetherButton = ({ size = 'normal' }) => {
     </div>
   )
 }
-const Footer = () => {
+const Footer = ({ onClick }: any) => {
 
   return (
 
@@ -58,7 +60,7 @@ const Footer = () => {
         <div className='social-icons-footer'>
           <SocialIcons />
         </div>
-        <WorkTogetherButton size="normal" />
+        <WorkTogetherButton size="normal" onClick={onClick} />
 
       </div>
 

@@ -4,9 +4,9 @@ import './Collaboration.css'
 import { Card } from '../../card/Card'
 import { WorkTogetherButton } from '../../Footer/Footer'
 
-export const Collaboration = () => {
+export const Collaboration = ({ onClickWorkTogether, onCloseModal }) => {
     return (
-        <Card title="Collaboration">
+        <Card title="Collaboration" onClose={onCloseModal}>
             <div className="collaboration-wrapper">
                 <div className="circle-wrap">
                     <div className="round-circle">
@@ -19,7 +19,12 @@ export const Collaboration = () => {
                         Let’s work together on your next project
                     </div>
                     <div className="collab-button">
-                        <WorkTogetherButton size="large" />
+                        <WorkTogetherButton
+                            size="large"
+                            onClick={() => {
+                                onClickWorkTogether()
+                            }}
+                        />
                     </div>
                 </div>
             </div>

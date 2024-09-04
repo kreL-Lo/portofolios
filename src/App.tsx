@@ -8,6 +8,7 @@ import { CustomScrollBar } from './components/ScrollBar/CustomScrollBar';
 import Footer from './components/Footer/Footer';
 import LeftBar from './components/LeftBar/LeftBar';
 import { MobileCover } from './components/MobileCover/MobileCover';
+import { WriteMeModal } from './components/writeMeModal/WriteMeModal';
 
 function mapRange(x: number) {
 
@@ -171,20 +172,31 @@ const App = () => {
       }
     }, 1000)
   }, [])
+
+  const [open, setOpen] = useState(false);
   return (
     <>
+      <WriteMeModal open={open} onClose={() => {
+        setOpen(false);
+      }} />
       <div className='main-grid' >
         <Header setIsActive={setIsActive} isActive={isActive} />
         <div className='main-content-grid'>
           <LeftBar activeScroll={activeScroll} scrollToSection={scrollToSection} />
           <div className='main-content' onScroll={handleScroll}>
             <MobileCover isActive={isActive} activeScroll={activeScroll} setIsActive={setIsActive} scrollToSection={scrollToSection} />
-            <Home />
+            <Home onClickWorkTogether={() => {
+              setOpen(true);
+            }}
+              onCloseModal={() => {
+                setOpen(false);
+              }}
+            />
           </div>
 
         </div>
 
-        <Footer />
+        <Footer onClick={() => setOpen(true)} />
       </div>
       <CustomScrollBar bounds={bounds} />
     </>

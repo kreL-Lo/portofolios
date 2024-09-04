@@ -1,11 +1,9 @@
-[x] collaboration
-[] footer
-
 [] make all other components responsive
   [] about me 
   [] where i work
 [] make card movably by click
 [] put things together
-[] make modal for write-me 
 [] decide the sections and how the flow will go 
 [] projects section 
+[] add back locomotive scroll
+[] improve write me validations

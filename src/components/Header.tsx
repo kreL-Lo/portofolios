@@ -71,8 +71,9 @@ const Header = ({
 }
 
 
-export const CardTopRightButtons = ({ }: {
-}) => {
+export const CardTopRightButtons = ({
+  onClose
+}: any) => {
 
 
   return (
@@ -90,7 +91,11 @@ export const CardTopRightButtons = ({ }: {
       >
         <Fullscreen />
       </div>
-      <div className='card-button-icon'>
+      <div className='card-button-icon' onClick={() => {
+        console.log('here', onClose);
+        if (onClose)
+          onClose();
+      }}>
         <Close />
       </div>
     </div>

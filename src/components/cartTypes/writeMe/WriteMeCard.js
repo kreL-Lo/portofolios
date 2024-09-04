@@ -35,7 +35,7 @@ export const TextArea = ({ label, required, name }) => {
     )
 }
 
-export const WriteMeCard = () => {
+export const WriteMeCard = ({ onClose }) => {
     const [isSend, setIsSend] = useState(false)
     const [notify, setNotify] = useState(-1) // 4 state 0: warning, 1: error, 2: success, -1: none
     const [countDown, setCountDown] = useState(3)
@@ -68,13 +68,14 @@ export const WriteMeCard = () => {
                     setCountDown(3)
                     setIsSend(false)
                     setNotify(-1)
+                    onClose()
                 }
             }, [1000])
             // send formObject to the server here
 
             try {
                 setNotify(2)
-                // emailjs.send(serviceId, templateId, formObject)
+                emailjs.send(serviceId, templateId, formObject)
                 setIsSend(true)
             } catch (e) {
                 setNotify(1)
@@ -90,7 +91,12 @@ export const WriteMeCard = () => {
     }
 
     return (
-        <Card title="write-me">
+        <Card
+            title="write-me"
+            onClose={() => {
+                onClose()
+            }}
+        >
             <div className="write-me-container">
                 <form onSubmit={onSubmit}>
                     <Input

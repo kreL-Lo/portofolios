@@ -9,6 +9,12 @@
     margin-top: 65px;
 }
 
+@media screen and (max-width: 768px) {
+    .custom-scroll {
+        height: calc(100vh - 188px);
+    }
+}
+
 .custom-scroll-thumb {
     position: relative;
     background-color: var(--first-animation-color);
