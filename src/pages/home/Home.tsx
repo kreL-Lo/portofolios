@@ -57,7 +57,16 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <div className="firstItem" id="second-section">
-      <span className='about-content about-content-header-creative'> <h2> Your inventive website creator</h2>
+      <span className="about-content about-content-header-creative" style={{ paddingBottom: 100 }}>
+        {' '}
+        <h2>
+          {' '}
+          Bringing your{' '}
+          <span className="about-content-header-creative">
+            website{' '}
+          </span>{' '}
+          to life
+        </h2>
       </span>
       <AboutMe />
       <div className="home-portrait-pos">
@@ -91,20 +100,21 @@ const SectionProgress = () => {
     <div id="section-progress">
       <div className="about-content">
         <h2>
-          Project {' '}
+          Project{' '}
           <span className="about-content-header-creative">
             Hightlights
           </span>
         </h2>
       </div>
-      <div className='progress-sec'>
+      <div className="progress-sec">
         <span> In Progress</span>
-        <Engineering style={{
-          fontSize: '50px',
-          color: 'red',
-          marginBottom: '20px',
-
-        }} />
+        <Engineering
+          style={{
+            fontSize: '50px',
+            color: 'red',
+            marginBottom: '20px',
+          }}
+        />
       </div>
     </div>
   )

@@ -17,6 +17,10 @@ function mapRange(x: number) {
   return y;
 }
 
+const FIRST_SECTION = 'first-section';
+const SECOND_SECTION = 'section-progress';
+const THIRD_SECTION = 'third-section';
+
 const publicKey = "KC-fCsNyHpRTGMu6z";
 
 const App = () => {
@@ -61,9 +65,9 @@ const App = () => {
     });
 
     // Query sections by ID
-    const firstSection = document.getElementById('first-section');
-    const secondSection = document.getElementById('second-section');
-    const thirdSection = document.getElementById('third-section');
+    const firstSection = document.getElementById(FIRST_SECTION);
+    const secondSection = document.getElementById(SECOND_SECTION);
+    const thirdSection = document.getElementById(THIRD_SECTION);
     const windowHeight = target.clientHeight;
     if (firstSection && secondSection && thirdSection) {
       const firstSectionTop = firstSection.offsetTop;
@@ -108,9 +112,9 @@ const App = () => {
 
   // Function to scroll to a section based on the index
   function scrollToSection(index: number) {
-    const firstSection = document.getElementById('first-section');
-    const secondSection = document.getElementById('second-section');
-    const thirdSection = document.getElementById('third-section');
+    const firstSection = document.getElementById(FIRST_SECTION);
+    const secondSection = document.getElementById(SECOND_SECTION);
+    const thirdSection = document.getElementById(THIRD_SECTION);
 
     // Select the scrollable container
     const scrollableContainer = document.querySelector('.main-content');
@@ -121,15 +125,17 @@ const App = () => {
     }
 
     let section;
-
+    let offset = 0
     switch (index) {
       case 0:
         section = firstSection;
         break;
       case 1:
         section = secondSection;
+        offset = 300;
         break;
       case 2:
+        offset = 300;
         section = thirdSection;
         break;
       default:
@@ -142,9 +148,16 @@ const App = () => {
       const sectionTop = section.offsetTop;
 
       // Scroll the container to the section's position
+      // and make sure the section is in the center of the screen
+      // by calculating the scroll position based on the section's height
+
+
+      if (window.innerWidth < 1120)
+        offset = 0;
+
       scrollableContainer.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth'
+        top: sectionTop - scrollableContainer.clientHeight / 2 + section.clientHeight / 2 - offset,
+        behavior: 'smooth',
       });
     }
   }
