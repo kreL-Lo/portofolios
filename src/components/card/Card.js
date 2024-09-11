@@ -6,9 +6,7 @@ export const Card = ({ children, title = 'Card-Title', onClose }) => {
         <div className="card">
             <div className="card-header">
                 <span className="card-header-title">{title}</span>
-                <div>
-                    <CardTopRightButtons onClose={onClose} />
-                </div>
+                <CardTopRightButtons onClose={onClose} />
             </div>
             <div className="card-content">{children}</div>
         </div>

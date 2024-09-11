@@ -10,6 +10,12 @@
     height: fit-content;
     transition: all 0.5s;
 }
+/* if mobile add padding-right */
+@media (max-width: 768px) {
+    .card {
+        margin-right: 30px;
+    }
+}
 
 .card-header {
     grid-column: 1 / -1; /* Make header span across all columns */

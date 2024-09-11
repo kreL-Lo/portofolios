@@ -47,3 +47,53 @@
     width: 100%;
     max-width: 50ch;
 }
+
+/* on mobile for about-me-container */
+@media (max-width: 1120px) {
+    .about-me-container {
+        font-size: 1.4rem;
+        /* make thee text break */
+        width: inherit;
+        text-wrap: break-word;
+    }
+    /* same for others */
+    .where-i-work-container {
+        font-size: 1.3rem;
+        /* make thee text break */
+        width: inherit;
+        text-wrap: break-word;
+    }
+    /* same for hobbies */
+    .hobbies-container {
+        font-size: 1.1rem;
+        /* make thee text break */
+        width: inherit;
+        text-wrap: break-word;
+    }
+}
+
+/* if not mobile */
+@media (min-width: 1120px) {
+    .about-me-container {
+        font-size: 1.2rem;
+        /* make thee text break */
+    }
+    /* same for others */
+    .where-i-work-container {
+        font-size: 1.1rem;
+        /* make thee text break */
+    }
+
+    /* same for hobbies */
+    .hobbies-container {
+        font-size: 1.2rem;
+        /* make thee text break */
+    }
+}
+
+#third-section {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

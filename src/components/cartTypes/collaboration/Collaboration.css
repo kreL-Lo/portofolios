@@ -19,7 +19,7 @@
     border-radius: 100%;
 }
 .collab-text {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1.5rem, 4vw, 4rem);
     max-width: 22ch;
 }
 

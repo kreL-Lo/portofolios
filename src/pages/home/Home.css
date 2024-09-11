@@ -53,15 +53,28 @@
     text-align: center;
 }
 
+.about-content h2 {
+    /* font-size: clamp(2rem, 5vw, 4rem); */
+    /* make font size smaller  */
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: normal;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+    line-height: 1.2;
+    margin-top: 0;
+    /* center it */
+    text-align: center;
+}
 .about-content-header-creative {
     color: var(--first-animation-color);
 }
 
 .about-sub-header {
-    font-size: clamp(0.7em, 1.5vw, 0.8rem);
+    font-size: clamp(0.8em, 1.5vw, 0.8rem);
     line-height: 1.5;
     text-align: center;
 
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,4 +120,83 @@
 
 #first-section::after {
     left: 200%; /* Starts further off-screen to create the repeating effect */
+}
+
+#second-section {
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* mobile */
+@media (max-width: 1120px) {
+    #second-section {
+        gap: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0 20px;
+    }
+}
+/* move stuff section */
+.home-portrait-pos {
+    transform: translate(300px, -50px);
+}
+
+.where-i-work-pos {
+    transform: translate(-300px, -200px);
+}
+
+.hobbies-pos {
+    transform: translate(90px, -400px);
+}
+
+/* Mobile */
+@media (max-width: 1120px) {
+    .home-portrait-pos {
+        margin-left: 10vw;
+        transform: translate(0px, 0px);
+    }
+
+    .where-i-work-pos {
+        transform: translate(0, 0);
+        margin-right: 10vw;
+    }
+
+    .hobbies-pos {
+        transform: translate(0, 0);
+        margin-right: 40vw;
+    }
+}
+
+/* if media 1120 px */
+@media (min-width: 1120px) {
+    /* translate third section */
+    #section-progress {
+        transform: translateY(-300px);
+    }
+
+    #third-section {
+        transform: translateY(-300px);
+    }
+}
+
+.progress-sec {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-sec span {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    color: var(--first-animation-color);
+}
+
+#section-progress {
+    margin: 200px 0px;
 }

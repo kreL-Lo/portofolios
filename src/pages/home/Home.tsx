@@ -11,14 +11,20 @@ import {
 } from '../../components/cartTypes/aboutme/AboutMe'
 import { Collaboration } from '../../components/cartTypes/collaboration/Collaboration'
 import { BottomFooter } from '../../components/bottomFooter/BottomFooter'
+import { InProgress } from '../../components/cartTypes/projectsProgress/InProgress'
+import { Engineering } from '@mui/icons-material'
 const Home = ({ onClickWorkTogether, onCloseModal }: any) => {
   return (
     <>
       <div className="home-container">
         <Section1 />
 
-        <Section2 onClickWorkTogether={onClickWorkTogether} onCloseModal={onCloseModal} />
-        <Section3 />
+        <Section2 />
+        <SectionProgress />
+        <Section3
+          onClickWorkTogether={onClickWorkTogether}
+          onCloseModal={onCloseModal}
+        />
         <BottomFooter />
       </div>
     </>
@@ -28,7 +34,6 @@ const Home = ({ onClickWorkTogether, onCloseModal }: any) => {
 const Section1 = () => {
   return (
     <div className="about-container" id="first-section">
-      <div className="about-header">HOME</div>
       <div className="about-content">
         <h1>
           Hi, I'm Ciprian, a
@@ -49,61 +54,58 @@ const Section1 = () => {
     </div>
   )
 }
-const Section2 = ({ onClickWorkTogether, onCloseModal }: any) => {
+const Section2 = () => {
   return (
     <div className="firstItem" id="second-section">
-      <div className="imageContainer">
-        <div
-          style={{
-            marginLeft: 50,
-          }}
-        >
-          <PotraitCard />
-
-          <AboutMe />
-          <WhereIWork />
-          <Hobbies />
-          <Collaboration onClickWorkTogether={onClickWorkTogether} onCloseModal={onCloseModal} />
-        </div>
+      <span className='about-content about-content-header-creative'> <h2> Your inventive website creator</h2>
+      </span>
+      <AboutMe />
+      <div className="home-portrait-pos">
+        <PotraitCard />
       </div>
-      <div className="descriptionContainer">
-        <h1>
-          Hi, I am Ciprian, a
-          <br />
-          Developer
-        </h1>
-        <div>
-          <span>
-            &emsp; A passionate and optimistic developer dedicated
-            to crafting innovative solutions with precision and
-            creativity
-          </span>
-        </div>
+      <div className="where-i-work-pos">
+        <WhereIWork />
+      </div>
+      <div className="hobbies-pos">
+        <Hobbies />
       </div>
     </div>
   )
 }
 
-const Section3 = () => {
+const Section3 = ({ onClickWorkTogether, onCloseModal }: any) => {
   return (
     <div id="third-section">
-      <div className="imageContainer"></div>
-      <div className="descriptionContainer">
-        <h1>
-          Hi, I am Ciprian,
-          <br />
-          Developer
-        </h1>
-        <div>
-          <span>
-            &emsp; A passionate and optimistic developer dedicated
-            to crafting innovative solutions with precision and
-            creativity
-          </span>
-        </div>
-      </div>
+      <Collaboration
+        onClickWorkTogether={onClickWorkTogether}
+        onCloseModal={onCloseModal}
+      />
     </div>
   )
 }
 
 export default Home
+
+const SectionProgress = () => {
+  return (
+    <div id="section-progress">
+      <div className="about-content">
+        <h2>
+          Project {' '}
+          <span className="about-content-header-creative">
+            Hightlights
+          </span>
+        </h2>
+      </div>
+      <div className='progress-sec'>
+        <span> In Progress</span>
+        <Engineering style={{
+          fontSize: '50px',
+          color: 'red',
+          marginBottom: '20px',
+
+        }} />
+      </div>
+    </div>
+  )
+}
