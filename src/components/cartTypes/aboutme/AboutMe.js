@@ -2,9 +2,9 @@ import React from 'react'
 import './AboutMe.css'
 import { Card } from '../../card/Card'
 
-export const AboutMe = () => {
+export const AboutMe = (props) => {
     return (
-        <Card title="about-me">
+        <Card title="about-me" {...props}>
             <ol className="about-me-container">
                 <p>
                     <span className="gr">1 </span> 👨🏻‍💻 Nice to meet you! I'm
@@ -22,9 +22,9 @@ export const AboutMe = () => {
     )
 }
 
-export const WhereIWork = () => {
+export const WhereIWork = (props) => {
     return (
-        <Card title="where-i-work">
+        <Card title="where-i-work" {...props}>
             <ol className="where-i-work-container">
                 <p>
                     <span className="gr">1 </span> I work from my home office in
@@ -42,9 +42,9 @@ export const WhereIWork = () => {
     )
 }
 
-export const Hobbies = () => {
+export const Hobbies = (props) => {
     return (
-        <Card title="hobbies">
+        <Card title="hobbies" {...props}>
             <ol className="hobbies-container">
                 <p>
                     <span className="gr">1 </span> 🎸Guitar
