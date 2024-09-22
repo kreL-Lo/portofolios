@@ -21,7 +21,7 @@ const Home = ({ onClickWorkTogether, onCloseModal, bounds }: any) => {
                 <Section1 />
 
                 <Section2 bounds={bounds} />
-                <SectionProgress />
+                {/* <SectionProgress /> */}
                 <Section3
                     onClickWorkTogether={onClickWorkTogether}
                     onCloseModal={onCloseModal}

@@ -7,10 +7,10 @@ const icons = [
     icon: Person,
     content: 'about'
   },
-  {
-    icon: Work,
-    content: 'projects'
-  },
+  // {
+  //   icon: Work,
+  //   content: 'projects'
+  // },
   {
     content: 'contact',
     icon: Mail

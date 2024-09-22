@@ -21,7 +21,7 @@ const SECOND_SECTION = 'section-progress'
 const THIRD_SECTION = 'third-section'
 
 const publicKey = 'KC-fCsNyHpRTGMu6z'
-
+const OFF_SET_SCROLL = 300;
 const App = () => {
     useEffect(() => {
         emailjs.init({
@@ -50,32 +50,28 @@ const App = () => {
         const target = scroll.currentTarget
 
         const firstSection = document.getElementById(FIRST_SECTION)
-        const secondSection = document.getElementById(SECOND_SECTION)
+        // const secondSection = document.getElementById(SECOND_SECTION)
         const thirdSection = document.getElementById(THIRD_SECTION)
         const windowHeight = target.clientHeight
 
         const SCROLL_DETECT_OFFSET = windowHeight / 4;
 
-        if (firstSection && secondSection && thirdSection) {
+        if (firstSection && thirdSection) {
             const firstSectionTop = firstSection.offsetTop
-            const secondSectionTop = secondSection.offsetTop
             const thirdSectionTop = thirdSection.offsetTop
+            let offset = OFF_SET_SCROLL;
+            if (window.innerWidth < 1120) offset = 0
 
             const scrollY = target.scrollTop
             const middleScreen = windowHeight / 2
 
             if (
-                scrollY >= firstSectionTop - middleScreen &&
-                scrollY < secondSectionTop - middleScreen
+                scrollY >= firstSectionTop - middleScreen - offset &&
+                scrollY < thirdSectionTop - middleScreen - offset
             ) {
                 setActiveScroll(0)
-            } else if (
-                scrollY >= secondSectionTop - middleScreen &&
-                scrollY < thirdSectionTop - middleScreen
-            ) {
+            } else if (scrollY >= thirdSectionTop - middleScreen - offset) {
                 setActiveScroll(1)
-            } else if (scrollY >= thirdSectionTop - middleScreen) {
-                setActiveScroll(2)
             }
         }
 
@@ -123,10 +119,8 @@ const App = () => {
     // Function to scroll to a section based on the index
     function scrollToSection(index: number) {
         const firstSection = document.getElementById(FIRST_SECTION)
-        const secondSection = document.getElementById(SECOND_SECTION)
         const thirdSection = document.getElementById(THIRD_SECTION)
 
-        // Select the scrollable container
         const scrollableContainer = document.querySelector('.main-content')
 
         if (!scrollableContainer) {
@@ -141,28 +135,19 @@ const App = () => {
                 section = firstSection
                 break
             case 1:
-                section = secondSection
-                offset = 300
-                break
-            case 2:
-                offset = 300
+                offset = OFF_SET_SCROLL
                 section = thirdSection
                 break
+
             default:
                 console.error(
                     'Invalid index. Please provide an index between 0 and 2.'
                 )
                 return
         }
-
         // Check if the section exists
         if (section) {
             const sectionTop = section.offsetTop
-
-            // Scroll the container to the section's position
-            // and make sure the section is in the center of the screen
-            // by calculating the scroll position based on the section's height
-
             if (window.innerWidth < 1120) offset = 0
 
             scrollableContainer.scrollTo({

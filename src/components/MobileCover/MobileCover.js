@@ -7,12 +7,12 @@ const items = [
         id: '01',
         title: 'about',
     },
+    // {
+    //     id: '02',
+    //     title: 'projects',
+    // },
     {
         id: '02',
-        title: 'projects',
-    },
-    {
-        id: '03',
         title: 'contact',
     },
 ]
