@@ -102,6 +102,25 @@ const App = () => {
                 targets.push(element.getAttribute('data-id'))
             }
         })
+
+
+        // target is the scrollable container
+
+
+
+
+        const collabs: any = document.getElementsByClassName('collab-text');
+        if (collabs.length > 0) {
+            const collabRect = collabs[0].getBoundingClientRect();
+            const scrollFactor = 0.09; // Adjust this value for faster or slower parallax effect
+
+            // Calculate how far the element has moved in the scrollable container
+            const elementOffsetTop = collabRect.top + target.scrollTop - windowHeight / 2;
+            const translateY = (target.scrollTop - elementOffsetTop) * scrollFactor;
+
+            collabs[0].style.transform = `translateY(${translateY}px)`;
+        }
+        // Apply the transform effect
         setBounds({
             scroll: {
                 y: target.scrollTop,

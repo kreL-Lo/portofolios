@@ -48,17 +48,20 @@
 }
 
 .card {
-    /* Your regular card styles here */
+    /* Regular card styles */
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: scale(1); /* Ensure it's scaled to 1 by default */
+}
+
+.card-animated {
+    /* This class only controls the animation state */
+    opacity: 0;
 }
 
 .card-animate {
-    /* Example animation when the card pops up */
-    opacity: 0;
-    transform: scale(1);
+    /* Apply the animation when the class is added */
     animation: popup 0.8s ease-in-out forwards;
-    visibility: visible;
 }
 
 @keyframes popup {
@@ -70,8 +73,4 @@
         opacity: 1;
         transform: scale(1);
     }
-}
-
-.card-animated {
-    opacity: 0;
 }

@@ -13,11 +13,10 @@ export const Card = ({
     const [animate, setAnimate] = useState(false)
 
     useEffect(() => {
-        // Check if the card should animate based on `bounds.targets`
         if (bounds && bounds?.targets.includes(dataId)) {
             setAnimate(true) // Trigger animation
         }
-    }, [bounds, dataId]) // Run effect whenever `bounds.targets` or `dataId` changes
+    }, [bounds, dataId])
     //if animated is true add an extra class to the card class name
     const cardClassNames = [
         'card',
