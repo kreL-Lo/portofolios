@@ -1,3 +1,11 @@
 .wave-letter {
     display: inline-block;
+    word-break: break-word !important;
+}
+
+.wave-text {
+    text-align: center;
+    padding-right: 50px;
+    word-break: break-word !important;
+    width: 50ch;
 }

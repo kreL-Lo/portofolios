@@ -90,7 +90,7 @@ const Section2 = ({ bounds }: any) => {
     }, [bounds, triggered])
 
     // Function to wrap each letter in a span
-    const waveText = 'Bringing your website to life'
+    const waveText = 'Bringing your site to life'
 
     const wrapLetters = (text: string) => {
         return text.split('').map((letter, index) => (
