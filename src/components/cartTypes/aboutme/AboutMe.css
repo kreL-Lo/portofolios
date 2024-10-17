@@ -52,6 +52,11 @@
     max-width: 50ch;
 }
 
+.hobbies-container p {
+    /* make text no wrap */
+    white-space: nowrap;
+}
+
 /* on mobile for about-me-container */
 @media (max-width: 1120px) {
     .about-me-container {
